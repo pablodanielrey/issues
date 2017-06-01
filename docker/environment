@@ -1,0 +1,3 @@
+
+REDMINE_HOST=127.0.0.1:3000
+REDMINE_KEY=alguna_clave_de_la_api_rest
