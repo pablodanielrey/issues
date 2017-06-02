@@ -28,6 +28,9 @@ def do_cprofile(func):
     return profiled_func
 """
 
+class JSONSerializable:
+    pass
+
 
 class Issue(JSONSerializable):
 
