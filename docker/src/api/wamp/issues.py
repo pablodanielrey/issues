@@ -3,7 +3,7 @@ import asyncio
 import os
 
 from wamp import WampComponent
-from model.issue.issue import Issue
+from model.issues.issue import Issue
 
 
 class Issues(WampComponent):

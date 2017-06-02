@@ -1,10 +1,11 @@
 from autobahn.asyncio.wamp import ApplicationRunner
-from wamp.issues import Issues
+from api.wamp.issues import Issues
 
 if __name__ == '__main__':
 
     runner = ApplicationRunner(
-        os.environ['CROSSBAR_ROUTER']
+        url=os.environ['CROSSBAR_URL'],
+        realm=os.environ['CROSSBAR_REALM']
     )
     runner.run(Issues)
 

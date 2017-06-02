@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
-from redmine import Redmine
-from model.users.users  import UserPassword, User, Mail
-from model.offices.office import Office
-from model.serializer import JSONSerializable
-from model.registry import Registry
+from redminelib import Redmine
+#from model.users.users  import UserPassword, User, Mail
+#from model.offices.office import Office
+#from model.serializer import JSONSerializable
+#from model.registry import Registry
 import base64
 import logging
 import datetime
 import uuid
 import re
-from model.assistance.utils import Utils
+#from model.assistance.utils import Utils
 
 
+"""
 import cProfile
 
 def do_cprofile(func):
@@ -25,7 +26,7 @@ def do_cprofile(func):
         finally:
             profile.print_stats()
     return profiled_func
-
+"""
 
 
 class Issue(JSONSerializable):
