@@ -1,4 +1,6 @@
+import os
 from autobahn.asyncio.wamp import ApplicationRunner
+
 from api.wamp.issues import Issues
 
 if __name__ == '__main__':

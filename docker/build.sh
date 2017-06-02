@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -t issues .
+sudo docker build -t issues .
 

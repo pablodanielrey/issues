@@ -1,3 +1,3 @@
 #!/bin/bash
-docker run -ti --name issues --env-file environment issues $1
+sudo docker run -ti --name issues --env-file environment issues $1
 

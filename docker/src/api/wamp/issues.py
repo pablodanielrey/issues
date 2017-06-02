@@ -2,6 +2,7 @@
 import asyncio
 import os
 
+import autobahn
 from wamp import WampComponent
 from model.issues.issue import Issue
 

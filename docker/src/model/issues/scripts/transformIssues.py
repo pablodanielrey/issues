@@ -5,7 +5,7 @@ from redmine import Redmine
 if __name__ == '__main__':
     logging.getLogger().setLevel(logging.INFO)
 
-    r = Redmine(os.environ['REDMINE_URL'], key = os.environ['REDMINE_KEY'], version='3.3', requests={'verify': False})
+    r = Redmine(os.environ['ISSUES_REDMINE_URL'], key = os.environ['ISSUES_REDMINE_KEY'], version='3.3', requests={'verify': False})
 
     trackers = r.tracker.all()
     tareas_tracker = [t for t in trackers if t.name == 'Tareas'][0]

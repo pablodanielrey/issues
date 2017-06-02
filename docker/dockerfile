@@ -16,4 +16,6 @@ COPY src /src
 COPY run.sh /src/
 WORKDIR /src
 
+VOLUME /src
+
 CMD ["sh","/src/run.sh"]

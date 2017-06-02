@@ -97,7 +97,7 @@ class Attachment(JSONSerializable):
 class RedmineAPI:
 
     import os
-    REDMINE_URL = os.environ['ISSUES_REDMINE']
+    REDMINE_URL = os.environ['ISSUES_REDMINE_URL']
     KEY = os.environ['ISSUES_REDMINE_KEY']
     TRACKER_ERROR = 1
     TRACKER_COMMENT = 4
