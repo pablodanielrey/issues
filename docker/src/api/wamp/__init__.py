@@ -1,4 +1,5 @@
-
+import os
+import psycopg2
 
 def getConnection(readonly=False):
     con = psycopg2.connect(
@@ -7,7 +8,7 @@ def getConnection(readonly=False):
             user=os.environ['ISSUES_DB_USER'],
             password=os.environ['ISSUES_DB_PASSWORD']
         )
-    if readonly:
-        con.autocomit = True
-        con.readonly = True
+    #if readonly:
+        #con.autocomit = True
+        #con.readonly = True
     return con

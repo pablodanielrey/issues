@@ -15,6 +15,12 @@ class WampComponent(ApplicationSession):
     def getRegisterOptions(self):
         return RegisterOptions(details_arg='details')
 
+    """
+    def __init__(self, config = None):
+        ApplicationSession.__init__(self, config)
+    """
+
     async def onJoin(self, details):
-        results = yield self.register(self, options=self.getRegisterOptions())
-        results = yield self.subscribe(self)
+        logging.info('Registrando procesos')
+        results = await self.register(self, options=self.getRegisterOptions())
+        results = await self.subscribe(self)
