@@ -8,16 +8,17 @@ import txaio
 txaio.use_asyncio()
 txaio.start_logging(level='debug')
 
-if __name__ == '__main__':
-
+def main():
     logging.info('Ejecuando loop')
-
     runner = ApplicationRunner(
         url=os.environ['CROSSBAR_URL'],
         realm=os.environ['CROSSBAR_REALM']
     )
-
     runner.run(Issues)
+
+
+if __name__ == '__main__':
+    main()
 
     """
     		  this.getMyIssues = getMyIssues;

@@ -1,7 +1,10 @@
 import sys
 
-if __name__ == '__main__':
+def main():
     sys.exit(1)
+
+if __name__ == '__main__':
+    main()
 
     """
         api rest:

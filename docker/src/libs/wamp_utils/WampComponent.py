@@ -1,3 +1,4 @@
+import logging
 from autobahn.wamp.types import CallOptions, RegisterOptions
 from autobahn.asyncio.wamp import ApplicationSession, ApplicationRunner
 

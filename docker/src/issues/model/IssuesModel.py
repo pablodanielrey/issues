@@ -12,6 +12,7 @@ import re
 #from model.assistance.utils import Utils
 from issues.model import Issues
 from issues.model import UserIssueData
+from issues.model.RedmineAPI import RedmineAPI
 
 """
 import cProfile

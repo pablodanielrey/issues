@@ -19,4 +19,4 @@ RUN pip3 install -e .
 
 VOLUME /src
 
-CMD ["sh","/src/run.sh"]
+CMD ["wamp"]

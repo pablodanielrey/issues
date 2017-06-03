@@ -32,8 +32,8 @@ setup(name='issues',
                             'pyqrcode>=1.2.1'],
           entry_points={
             'console_scripts': [
-                'wamp=issues.api.wamp.main',
-                'flask=issues.api.rest.main'
+                'wamp=issues.api.wamp.main:main',
+                'flask=issues.api.rest.main:main'
             ]
           }
 
