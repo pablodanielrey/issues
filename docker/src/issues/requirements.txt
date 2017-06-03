@@ -1,0 +1,5 @@
+psycopg2>=2.7.1
+dateutils>=0.6.6
+python-redmine==2.0.2
+pyqrcode>=1.2.1
+

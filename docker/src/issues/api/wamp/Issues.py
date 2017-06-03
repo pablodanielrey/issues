@@ -4,10 +4,10 @@ import os
 
 import autobahn
 
-import api
-import wamp
-from wamp import WampComponent
-from model.issues.issue import Issue
+from issues import api
+from wamp_utils import WampComponent
+from issues.model import Issues, UserIssueData, IssuesModel
+
 
 
 class Issues(WampComponent):
@@ -20,6 +20,6 @@ class Issues(WampComponent):
         con = api.wamp.getConnection(readonly=True)
         try:
             userId = wamp.getWampUser(con, details)
-            return Issue.getMyIssues(con, userId, statuses, froms, tos)
+            return Issues.getMyIssues(con, userId, statuses, froms, tos)
         finally:
             con.close()

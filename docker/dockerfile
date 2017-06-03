@@ -7,14 +7,15 @@ RUN apt-get update && apt-get install -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install inject psycopg2 dateutils python-redmine pyqrcode
-
 ENV TZ=America/Argentina/Buenos_Aires
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 COPY src /src
 COPY run.sh /src/
+#RUN pip3 install -r /src/issues/requirements.txt
+
 WORKDIR /src
+RUN pip3 install -e .
 
 VOLUME /src
 

@@ -2,8 +2,7 @@ import os
 import logging
 from autobahn.asyncio.wamp import ApplicationRunner
 
-from api.wamp.issues import Issues
-
+from issues.api.wamp import Issues
 
 import txaio
 txaio.use_asyncio()

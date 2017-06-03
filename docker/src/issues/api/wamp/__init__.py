@@ -12,3 +12,9 @@ def getConnection(readonly=False):
         #con.autocomit = True
         #con.readonly = True
     return con
+
+from issues.api.wamp.Issues import Issues
+
+__all__ = [
+    'Issues'
+]
