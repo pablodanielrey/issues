@@ -29,11 +29,14 @@ setup(name='issues',
           install_requires=['psycopg2>=2.7.1',
                             'dateutils>=0.6.6',
                             'python-redmine>=2.0.2',
-                            'pyqrcode>=1.2.1'],
+                            'pyqrcode>=1.2.1',
+                            'Flask',
+                            'Flask-HTTPAuth'],
           entry_points={
             'console_scripts': [
                 'wamp=issues.api.wamp.main:main',
-                'flask=issues.api.rest.main:main'
+                'rest=issues.api.rest.main:main',
+                'flask=issues.web.main:main'
             ]
           }
 
