@@ -31,7 +31,8 @@ setup(name='issues',
                             'python-redmine>=2.0.2',
                             'pyqrcode>=1.2.1',
                             'Flask',
-                            'Flask-HTTPAuth'],
+                            'Flask-HTTPAuth',
+                            'itsdangerous'],
           entry_points={
             'console_scripts': [
                 'wamp=issues.api.wamp.main:main',
