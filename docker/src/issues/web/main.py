@@ -16,7 +16,7 @@ with open('/tmp/client_secrets.json','w') as f:
       "token_uri": os.environ['LOGIN_OIDC_URL'] + "/token",
       "userinfo_uri": os.environ['LOGIN_OIDC_URL'] + "/userinfo",
       "issuer": os.environ['LOGIN_OIDC_ISSUER'],
-      "redirect_uris": os.environ['USERS_URL'] + "/oidc_callback"
+      "redirect_uris": os.environ['ISSUES_URL'] + "/oidc_callback"
     }}, f)
 
 
@@ -52,7 +52,7 @@ def configuracion():
     usuario = oidc.user_getinfo()
     return {
         'usuario': usuario,
-        'users_api_url': os.environ['USERS_API_URL']
+        'issues_api_url': os.environ['ISSUES_API_URL']
     }
 
 @app.route('/logout', methods=['GET'])
