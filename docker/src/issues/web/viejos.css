@@ -1,0 +1,43 @@
+
+
+
+.users > div {
+  display: none;
+}
+
+.users .contenedorErrores > div {
+  display: none;
+}
+
+.users.error .contenedorErrores {
+  display: flex;
+}
+
+.users.error .pantalla {
+  display: none;
+}
+
+
+/*----- estilos de la pantalla --*/
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  overflow: visible;
+}
+
+
+.users .pantalla {
+  width: 100%;
+  height: 100vh;
+  /*background-color: green;*/
+}
+
+.users .pantalla_error {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+}

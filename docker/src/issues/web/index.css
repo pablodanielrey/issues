@@ -1,0 +1,43 @@
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.sistema {
+  /*overflow: hidden;*/
+  margin: 0 auto;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px auto 20px;
+  grid-row-gap: 0;
+  grid-column-gap: 0;
+  grid-template-areas:
+    "cabecera"
+    "contenido"
+    "pie";
+}
+
+/*body > div {
+  height: 100%;
+}*/
+
+.sistema .cabecera {
+  grid-area: cabecera;
+}
+
+.sistema .main {
+  grid-area: contenido;
+}
+
+.sistema .footer {
+  grid-area: pie;
+  background-color: green;
+}
+
+.sistema .consola {
+  position: absolute;
+  bottom: 0;
+}

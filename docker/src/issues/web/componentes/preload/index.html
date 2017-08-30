@@ -1,0 +1,27 @@
+<div class='users {{estado}} {{mensaje.mensaje}} {{mensaje.codigo}} {{error.error}} {{error.codigo}}'>
+
+  <!-- EstadoRedireccionando -->
+
+  <div class='pantalla contenedorPreload'>
+    <div class=tamanoPreload>
+        <div class="subContenedorPreloadRedireccionando">
+            <div>
+              <img class="imgAvatar" src="{{view.usuario.picture}}"></img>
+            </div><br>
+            <div>Bienvenido</div>
+            <div class="nombreUsuario">{{view.usuario.name}}</div>
+            <div>
+              <img class="imgCargando" src="img/preloader.gif"></img>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+  </div>
+
+  <div class='pantalla_error error_redireccionando'>
+    error redireccionando
+    Por favor contacte con DeTiSE haciendo click <a href='#'>aqui</a>
+  </div>
+
+</div>
