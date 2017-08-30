@@ -4,19 +4,26 @@ RUN apt-get update && apt-get install -y \
   python3 \
   postgresql-server-dev-all \
   python3-pip \
+  supervisor \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
 ENV TZ=America/Argentina/Buenos_Aires
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-COPY src /src
-COPY run.sh /src/
-#RUN pip3 install -r /src/issues/requirements.txt
+#RUN pip3 install -r /src/requirements.txt
 
+COPY entrypoint.sh /
+COPY supervisor/scron.conf /etc/supervisor/conf.d
+COPY supervisor/srsyslog.conf /etc/supervisor/conf.d
+COPY supervisor/srest.conf /etc/supervisor/conf.d
+COPY supervisor/sflask.conf /etc/supervisor/conf.d
+#COPY supervisor/swamp.conf /etc/supervisor/conf.d
+
+#COPY src /src
 WORKDIR /src
-RUN pip3 install -e .
+#RUN pip3 install -e .
 
-VOLUME /src
+#VOLUME /src
 
-CMD ["wamp"]
+ENTRYPOINT ["/entrypoint.sh"]
