@@ -34,6 +34,7 @@ app.controller("PedidoDitesiCtrl", ["$scope", "$http", "$state", function ($scop
     },
     function(error){
         console.log(error);
+        $state.go('pedidoDitesi.error');
     });
 
 

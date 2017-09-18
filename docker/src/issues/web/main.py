@@ -67,8 +67,7 @@ def logout():
 def send_libs(path):
     return send_from_directory(app.static_url_path + '/libs', path)
 
-
-@app.route('/', methods=['GET'], defaults={'path':None})
+@app.route('/privado', methods=['GET'], defaults={'path':None})
 @app.route('/privado/<path:path>', methods=['GET'])
 @oidc.require_login
 def send_privado(path):
