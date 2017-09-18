@@ -45,21 +45,23 @@ app.config['OIDC_SCOPES'] = ['openid','email','phone','profile','address','econo
 oidc = MyOpenIDConnect(app, credentials_store=DictWrapper('credentials_store'))
 
 @app.route('/config.json', methods=['GET'])
-@oidc.require_login
 @jsonapi
 def configuracion():
     #usuario = oidc.user_getinfo(['sub','name','family_name','picture','email','email_verified','birdthdate','address','profile','econo'])
-    usuario = oidc.user_getinfo()
-    return {
-        'usuario': usuario,
+    retorno = {
         'issues_api_url': os.environ['ISSUES_API_URL']
     }
+    if oidc.user_loggedin:
+        usuario = oidc.user_getinfo()
+        retorno['usuario'] = usuario
+    return retorno
+
 
 @app.route('/logout', methods=['GET'])
 @oidc.require_login
 def logout():
     oidc.logout()
-    return redirect(url_for('send'))
+    return redirect(url_for('send_privado'))
 
 @app.route('/libs/<path:path>', methods=['GET'])
 def send_libs(path):
@@ -67,12 +69,20 @@ def send_libs(path):
 
 
 @app.route('/', methods=['GET'], defaults={'path':None})
-@app.route('/<path:path>', methods=['GET'])
+@app.route('/privado/<path:path>', methods=['GET'])
 @oidc.require_login
-def send(path):
+def send_privado(path):
     if not path:
-        return redirect('/index.html'), 303
+        return redirect('/privado/index.html'), 303
+    return send_from_directory(app.static_url_path + '/privado', path)
+
+@app.route('/', methods=['GET'], defaults={'path':None})
+@app.route('/<path:path>', methods=['GET'])
+def send_publico(path):
+    if not path:
+        return redirect('/publico/index.html'), 303
     return send_from_directory(app.static_url_path, path)
+
 
 
 @app.after_request

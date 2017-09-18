@@ -1,7 +1,49 @@
+import logging
+logging.getLogger().setLevel(logging.DEBUG)
 import sys
+import base64
+import hashlib
+
+from flask import Flask, abort, make_response, jsonify, url_for, request, json, send_from_directory, send_file
+from flask_jsontools import jsonapi
+from dateutil import parser
+
+from rest_utils import register_encoder
+
+app = Flask(__name__)
+app.debug = True
+register_encoder(app)
+
+@app.route('/issues/api/v1.0/publico/pedidos_ditesi', methods=['PUT','POST'])
+@jsonapi
+def crear_pedido_ditesi():
+    data = json.loads(request.data)
+    logging.debug(data)
+    return {'status':200}
+
+@app.after_request
+def cors_after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+    return response
+
+@app.after_request
+def add_header(r):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    r.headers['Cache-Control'] = 'public, max-age=0'
+    return r
+
+
 
 def main():
-    sys.exit(1)
+    app.run(host='0.0.0.0', port=5001, debug=True)
 
 if __name__ == '__main__':
     main()
