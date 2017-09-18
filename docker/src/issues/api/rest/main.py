@@ -10,6 +10,8 @@ from dateutil import parser
 
 from rest_utils import register_encoder
 
+from issues.model import IssuesModel
+
 app = Flask(__name__)
 app.debug = True
 register_encoder(app)
@@ -19,7 +21,16 @@ register_encoder(app)
 def crear_pedido_ditesi():
     data = json.loads(request.data)
     logging.debug(data)
-    return {'status':200}
+    persona = {
+        'dni': data['dni'],
+        'nombre': data['nombre'],
+        'apellido': data['apellido'],
+        'telefono': data['telefono'],
+        'correo': data['correo']
+    }
+    problema = data['problema']
+    i = IssuesModel.crear_pedido_ditesi_publico(persona, problema)
+    return {'status':200, 'pedido': i}
 
 @app.after_request
 def cors_after_request(response):

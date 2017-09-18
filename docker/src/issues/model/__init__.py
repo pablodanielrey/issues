@@ -1,8 +1,6 @@
 
-from issues.model.IssuesModel import IssuesModel
-from issues.model.Issues import Issues
+from .IssuesModel import IssuesModel
 
 __all__ = [
-    'Issues',
     'IssuesModel'
 ]
