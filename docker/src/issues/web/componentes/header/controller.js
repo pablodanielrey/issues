@@ -1,5 +1,5 @@
 
-app.controller("HeaderCtrl", ["$scope", "$location", "$routeParams", "$resource", "$timeout", "$window", function ($scope, $location, $routeParams, $resource, $tiemout, $window) {
+app.controller("HeaderCtrl", ["$scope", "$location", "$resource", "$timeout", "$window", function ($scope, $location, $resource, $tiemout, $window) {
 
   $scope.view = {
     logo: '/img/usersico.gif',

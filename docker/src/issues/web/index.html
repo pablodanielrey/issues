@@ -1,45 +1,57 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Pedidos FCE</title>
+  <title>Usuarios FCE</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+  <script src="https://gitcdn.link/repo/angular/bower-material/master/angular-material.js"></script>
+  <link rel="stylesheet" href="https://gitcdn.link/repo/angular/bower-material/master/angular-material.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <!-- Awesome -->
-  <link rel="stylesheet" href="/libs/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
   <!-- Fuentes Google -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 
-  <script src='/module.js'></script>
-  <script src="/index.js"></script>
+  <script src='module.js'></script>
+  <script src="index.js"></script>
   <link rel="stylesheet" type="text/css" href="index.css">
 
-  <script src='/componentes/preload/controller.js'></script>
-  <link rel="stylesheet" type="text/css" href="/componentes/preload/style.css">
+  <script src='componentes/header/controller.js'></script>
+  <link rel="stylesheet" type="text/css" href="componentes/header/style.css">
 
-  <script src='/componentes/consola/controller.js'></script>
-  <link rel="stylesheet" type="text/css" href="/componentes/consola/style.css">
+  <script src='componentes/footer/controller.js'></script>
+  <link rel="stylesheet" type="text/css" href="componentes/footer/style.css">
 
-  <script src='/componentes/header/controller.js'></script>
-  <link rel="stylesheet" type="text/css" href="/componentes/header/header.css">
+  <script src='componentes/preload/controller.js'></script>
+  <link rel="stylesheet" type="text/css" href="componentes/preload/style.css">
+
+  <!-- componentes -->
+
+  <link rel="stylesheet" type="text/css" href="css/fce.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
 
 </head>
 
 <body ng-app="MainApp" ng-controller="IndexCtrl">
   <div class='sistema'>
     <header class='cabecera' ng-include="'componentes/header/index.html'" ng-controller="HeaderCtrl"></header>
-    <main class='main'>
-      <div ng-view></div>
-    </main>
-    <div class='consola' ng-include="'componentes/consola/index.html'" ng-controller="ConsolaCtrl"></div>
-    <footer class='footer'> <div style='height: 100%'>fooooottteeerrrgaaaa</div> </footer>
+    <main class='contenido' ui-view></main>
+    <footer class='pie fdr fac' ng-include="'componentes/footer/index.html'" ng-controller="FooterCtrl"></header>
   </div>
+
 </body>
 </html>

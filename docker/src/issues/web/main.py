@@ -10,7 +10,7 @@ import os
 with open('/tmp/client_secrets.json','w') as f:
     import json
     json.dump({"web": {
-      "client_id":"some-consumer",
+      "client_id":"issues",
       "client_secret":"consumer-secret",
       "auth_uri": os.environ['LOGIN_OIDC_URL'] + "/authorization",
       "token_uri": os.environ['LOGIN_OIDC_URL'] + "/token",
@@ -28,17 +28,17 @@ from flask_jsontools import jsonapi
 from auth_utils import MyOpenIDConnect, DictWrapper
 
 # set the project root directory as the static folder, you can set others.
-app = Flask(__name__, static_url_path='/src/users/web')
+app = Flask(__name__, static_url_path='/src/issues/web')
 app.debug = True
 app.config['SECRET_KEY'] = 'algo-secreto'
-app.config['SESSION_COOKIE_NAME'] = 'users_session'
+app.config['SESSION_COOKIE_NAME'] = 'issues_session'
 
 app.config['OIDC_CLIENT_SECRETS'] = '/tmp/client_secrets.json'
 app.config['OIDC_COOKIE_SECURE'] = False
 app.config['OIDC_VALID_ISSUERS'] = [os.environ['LOGIN_OIDC_ISSUER']]
 app.config['OIDC_RESOURCE_CHECK_AUD'] = False
 app.config['OIDC_INTROSPECTION_AUTH_METHOD'] = 'client_secret_post'
-app.config['OIDC_ID_TOKEN_COOKIE_NAME'] = 'users_oidc'
+app.config['OIDC_ID_TOKEN_COOKIE_NAME'] = 'issues_oidc'
 app.config['OIDC_USER_INFO_ENABLED'] = True
 app.config['OIDC_SCOPES'] = ['openid','email','phone','profile','address','econo']
 

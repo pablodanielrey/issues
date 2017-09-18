@@ -65,3 +65,23 @@
 .users .nombreUsuario {
   font-size: 40px;
 }
+
+.users .preload {
+  height: 100%;
+}
+
+.preload .imgUsuario {
+  width: 200px;
+  height: 200px;
+  -webkit-clip-path: circle(50% at 50% 50%);
+clip-path: circle(50% at 50% 50%);
+}
+
+.preload .contenedorUsuario {
+  height: 99%;
+  /*background-color: red;*/
+}
+
+.preload h1 {
+  margin-top: -5px;
+}
