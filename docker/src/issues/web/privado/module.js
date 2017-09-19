@@ -11,7 +11,7 @@ app.config(function($mdThemingProvider) {
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/preload");
+  $urlRouterProvider.otherwise("/pedido_ditesi");
 
   // --- preload ----
 
@@ -30,7 +30,26 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     templateUrl: 'componentes/preload/templates/error.html',
   })
 
+  // --- pedidos ----
 
+  $stateProvider
+  .state('pedidoDitesi', {
+    url:'/pedido_ditesi',
+    templateUrl: 'componentes/pedido_ditesi/index.html',
+    controller:'PedidoDitesiCtrl'
+  })
+  .state('pedidoDitesi.pedido', {
+    url:'/pedido',
+    templateUrl: 'componentes/pedido_ditesi/templates/pedido.html',
+  })
+  .state('pedidoDitesi.pedidoOk', {
+    url:'/pedido_ok',
+    templateUrl: 'componentes/pedido_ditesi/templates/pedido_registrado.html',
+  })
+  .state('pedidoDitesi.error', {
+    url:'/error',
+    templateUrl: 'componentes/pedido_ditesi/templates/error.html',
+  })
 
 }]);
 
