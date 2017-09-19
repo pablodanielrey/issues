@@ -1,5 +1,49 @@
-<form>
-<div>
+<div class="pedido fdc fac ">
+  <h1><i class="material-icons">near_me</i> Reportar problema</h1>
+  <div class="subContenedor fdc fac">
+    <p>Usa este formulario para darnos más detalles sobre el problema que estás experimentando y nos comunicaremos a la brevedad contigo.</p>
+  </div>
+
+
+
+  <form class="formulario">
+    <md-content md-theme="" layout-gt-sm="row" layout-padding>
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Nombre y Apellido</label>
+      <input  name="name" ng-model="pedido.nombre" />
+    </md-input-container>
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>DNI</label>
+      <input  name="name" ng-model="pedido.dni" />
+    </md-input-container>
+  </md-content>
+
+
+
+
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Correo electrónico</label>
+      <input  name="name" ng-model="pedido.correo" />
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Teléfono de contacto</label>
+      <input  name="name" ng-model="user.name" />
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>Describa el problema</label>
+      <textarea ng-model="pedido.problema" md-maxlength="200" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
+  </md-content>
+
+  </form>
+  <md-button class="md-raised md-primary" ng-click='registrarProblema()'>Enviar</md-button>
+</div>
+
+
+<!-- <div>
   <div>Dni</div>
   <input ng-model='pedido.dni'></input>
 </div>
@@ -23,5 +67,5 @@
   <div>Describa su problema</div>
   <input ng-model='pedido.problema'></input>
 </div>
-<button ng-click='registrarProblema()'>Registrar Problema</button>
-</form>
+
+<button ng-click='registrarProblema()'>Registrar Problema</button> -->

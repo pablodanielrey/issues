@@ -1,0 +1,29 @@
+.issues {
+  height: 100%;
+  background-color: white;
+}
+
+.issues .pedido {
+  height: 100%;
+  padding: 20px;
+  /*background-color: blue;*/
+}
+
+.issues .subContenedor {
+  width: 40%;
+  text-align: center;
+}
+
+.issues .formulario {
+  width: 50%;
+  background-color: #FAFAFA;
+  padding: 20px;
+  border: 1px solid #E5E5E5;
+  margin: 10px;
+}
+
+@media screen and (max-width: 720px) {
+  .issues .subContenedor {
+    width: 90%;
+  }
+}

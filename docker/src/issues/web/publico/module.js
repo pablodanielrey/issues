@@ -6,6 +6,9 @@ app.config(function($mdThemingProvider) {
     .primaryPalette('blue')
     .warnPalette('red')
     .accentPalette('cyan');
+
+    $mdThemingProvider.theme('docs-dark')
+      .dark();
 });
 
 
