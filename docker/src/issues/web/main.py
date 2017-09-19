@@ -83,7 +83,6 @@ def send_publico(path):
     return send_from_directory(app.static_url_path, path)
 
 
-
 @app.after_request
 def add_header(r):
     """
