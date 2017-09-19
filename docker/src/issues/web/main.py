@@ -49,6 +49,7 @@ oidc = MyOpenIDConnect(app, credentials_store=DictWrapper('credentials_store'))
 def configuracion():
     #usuario = oidc.user_getinfo(['sub','name','family_name','picture','email','email_verified','birdthdate','address','profile','econo'])
     retorno = {
+        'users_api_url': os.environ['USERS_API_URL'],
         'issues_api_url': os.environ['ISSUES_API_URL']
     }
     if oidc.user_loggedin:

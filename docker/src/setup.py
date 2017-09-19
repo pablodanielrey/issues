@@ -37,7 +37,8 @@ setup(name='issues',
                             'google-api-python-client',
                             'httplib2',
                             'pyjwt',
-                            'itsdangerous'],
+                            'itsdangerous',
+                            'python-redmine'],
           entry_points={
             'console_scripts': [
                 'wamp=issues.api.wamp.main:main',
