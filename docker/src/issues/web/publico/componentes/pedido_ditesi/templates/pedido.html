@@ -4,6 +4,30 @@
     <p>Usa este formulario para darnos más detalles sobre el problema que estás experimentando y nos comunicaremos a la brevedad contigo.</p>
   </div>
 
+  <form>
+    <div class="form-group fdr fac">
+      <div class="NombreInput">Nombre</div>
+      <input type="text" class="inputFormulario form-control" ng-model="pedido.nombre" required>
+    </div>
+    <div class="form-group fdr fac">
+      <div class="NombreInput">Apellido</div>
+      <input type="text" class="inputFormulario form-control" ng-model="pedido.apellido" required>
+    </div>
+    <div class="form-group fdr fac">
+      <div class="NombreInput">Correo</div>
+      <input type="text" class="inputFormulario form-control" ng-model="pedido.correo" required>
+    </div>
+    <div class="form-group fdr fac">
+      <div class="NombreInput">Teléfono</div>
+      <input type="mail" class="inputFormulario form-control" ng-model="pedido.etlefono" required>
+    </div>
+    <div class="form-group">
+  <div>Describe el problema</div>
+  <textarea class="form-control" rows="5" ng-model="pedido.problema" required></textarea>
+</div>
+    <md-button class="md-raised md-primary" ng-click='registrarProblema()'>Enviar Consulta</md-button>
+  </form>
+<!--
   <md-content class="formulario" layout-padding>
   <form>
 
@@ -41,6 +65,6 @@
 
 
   </form>
-  </md-content>
+  </md-content> -->
 
 </div>
