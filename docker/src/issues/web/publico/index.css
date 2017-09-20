@@ -4,7 +4,7 @@ body {
 }
 
 .sistema {
-  /*overflow: hidden;*/
+  /*overflow: auto;*/
   margin: 0 auto;
   height: 100vh;
   display: grid;
@@ -27,12 +27,17 @@ body {
 }
 
 .sistema .main {
+  /*overflow-y: scroll;*/
   grid-area: contenido;
 }
 
 .sistema .footer {
   grid-area: pie;
   background-color: green;
+}
+
+.sistema .contenido {
+  /*overflow-y: auto;*/
 }
 
 .sistema .consola {

@@ -4,68 +4,43 @@
     <p>Usa este formulario para darnos más detalles sobre el problema que estás experimentando y nos comunicaremos a la brevedad contigo.</p>
   </div>
 
+  <md-content class="formulario" layout-padding>
+  <form>
 
+    <div layout="row">
+      <md-input-container flex="50">
+        <label>Nombre y Apellido</label>
+        <input ng-model="pedido.nombre" required>
+      </md-input-container>
 
-  <form class="formulario">
-    <md-content md-theme="" layout-gt-sm="row" layout-padding>
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>Nombre y Apellido</label>
-      <input  name="name" ng-model="pedido.nombre" />
-    </md-input-container>
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>DNI</label>
-      <input  name="name" ng-model="pedido.dni" />
-    </md-input-container>
-  </md-content>
+      <md-input-container flex="50">
+        <label>DNI</label>
+        <input ng-model="pedido.dni" required>
+      </md-input-container>
+    </div>
 
+    <div layout="row">
+      <md-input-container flex="50">
+        <label>Correo Eléctronico</label>
+        <input ng-model="pedido.correo" required>
+      </md-input-container>
 
+      <md-input-container flex="50">
+        <label>Teléfono de Contacto</label>
+        <input ng-model="pedido.telefono">
+      </md-input-container>
+    </div>
 
+    <div layout="row">
+      <md-input-container flex="100">
+        <label>Describa el problema</label>
+        <textarea ng-model="pedido.problema" md-maxlength="200" rows="5" md-select-on-focus required></textarea>
+      </md-input-container>
+    </div>
+    <md-button class="md-raised md-primary" ng-click='registrarProblema()'>Enviar Consulta</md-button>
 
-
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>Correo electrónico</label>
-      <input  name="name" ng-model="pedido.correo" />
-    </md-input-container>
-
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>Teléfono de contacto</label>
-      <input  name="name" ng-model="user.name" />
-    </md-input-container>
-
-    <md-input-container class="md-block">
-      <label>Describa el problema</label>
-      <textarea ng-model="pedido.problema" md-maxlength="200" rows="5" md-select-on-focus></textarea>
-    </md-input-container>
-  </md-content>
 
   </form>
-  <md-button class="md-raised md-primary" ng-click='registrarProblema()'>Enviar</md-button>
-</div>
+  </md-content>
 
-
-<!-- <div>
-  <div>Dni</div>
-  <input ng-model='pedido.dni'></input>
 </div>
-<div>
-  <div>Nombre</div>
-  <input ng-model='pedido.nombre'></input>
-</div>
-<div>
-  <div>Apellido</div>
-  <input ng-model='pedido.apellido'></input>
-</div>
-<div>
-  <div>Correo de contacto</div>
-  <input ng-model='pedido.correo'></input>
-</div>
-<div>
-<div>Teléfono de contacto</div>
-<input ng-model='pedido.telefono'></input>
-</div>
-<div>
-  <div>Describa su problema</div>
-  <input ng-model='pedido.problema'></input>
-</div>
-
-<button ng-click='registrarProblema()'>Registrar Problema</button> -->

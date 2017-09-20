@@ -1,6 +1,7 @@
 .issues {
   height: 100%;
   background-color: white;
+  overflow-y: auto;
 }
 
 .issues .pedido {
@@ -16,14 +17,26 @@
 
 .issues .formulario {
   width: 50%;
-  background-color: #FAFAFA;
+  background-color: white;
   padding: 20px;
   border: 1px solid #E5E5E5;
   margin: 10px;
 }
 
+.issues .numeroDePedido {
+  background: #eee;
+  font-size: 50px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #007AC2;
+  margin-bottom: 5px;
+}
+
 @media screen and (max-width: 720px) {
   .issues .subContenedor {
     width: 90%;
+  }
+  .issues .formulario {
+    width: 100%;
   }
 }
