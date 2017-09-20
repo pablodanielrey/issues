@@ -1,27 +1,32 @@
-<form>
-<div>
-  <div>Dni</div>
-  <input ng-model='pedido.dni'></input>
+<div class="pedido fdc fac ">
+  <h1><i class="material-icons">near_me</i> Reportar problema</h1>
+  <div class="subContenedor fdc fac">
+    <p>Usa este formulario para darnos más detalles sobre el problema que estás experimentando y nos comunicaremos a la brevedad contigo.</p>
+  </div>
+
+  <form>
+    <div class="form-group fdr fac">
+      <div class="NombreInput">Nombre</div>
+      <input type="text" class="inputFormulario form-control" ng-model="pedido.nombre" required>
+    </div>
+    <div class="form-group fdr fac">
+      <div class="NombreInput">Apellido</div>
+      <input type="text" class="inputFormulario form-control" ng-model="pedido.apellido" required>
+    </div>
+    <div class="form-group fdr fac">
+      <div class="NombreInput">Correo</div>
+      <input type="text" class="inputFormulario form-control" ng-model="pedido.correo" required>
+    </div>
+    <div class="form-group fdr fac">
+      <div class="NombreInput">Teléfono</div>
+      <input type="mail" class="inputFormulario form-control" ng-model="pedido.etlefono">
+    </div>
+    <div class="form-group">
+  <div>Describe el problema</div>
+  <textarea class="form-control" rows="5" ng-model="pedido.problema" required></textarea>
 </div>
-<div>
-  <div>Nombre</div>
-  <input ng-model='pedido.nombre'></input>
+    <md-button class="md-raised md-primary" ng-click='registrarProblema()'>Enviar Consulta</md-button>
+  </form>
+
+
 </div>
-<div>
-  <div>Apellido</div>
-  <input ng-model='pedido.apellido'></input>
-</div>
-<div>
-  <div>Correo de contacto</div>
-  <input ng-model='pedido.correo'></input>
-</div>
-<div>
-<div>Teléfono de contacto</div>
-<input ng-model='pedido.telefono'></input>
-</div>
-<div>
-  <div>Describa su problema</div>
-  <input ng-model='pedido.problema'></input>
-</div>
-<button ng-click='registrarProblema()'>Registrar Problema</button>
-</form>
