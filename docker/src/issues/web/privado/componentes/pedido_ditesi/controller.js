@@ -5,27 +5,6 @@ app.controller("PedidoDitesiCtrl", ["$scope", "$http", "$state", function ($scop
 
   $scope.pedido = { };
 
-  $scope.obtenerInfoUsuario = function(uid) {
-
-    var api = $scope.config.users_api_url;
-
-    $http.get(api + '/usuarios/' + uid).then(
-    function(data){
-        var usuario = data.data;
-        console.log(usuario);
-        $scope.pedido = {
-            'dni': usuario.dni,
-            'nombre': usuario.nombre,
-            'apellido': usuario.apellido
-        }
-    },
-    function(error){
-        console.log(error);
-        $state.go('pedidoDitesi.error');
-    });
-
-  }
-
   $scope.$parent.obtener_config().then(function(c) {
     $scope.config = c.data;
     console.log(c.data);

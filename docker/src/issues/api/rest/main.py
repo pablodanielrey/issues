@@ -16,6 +16,14 @@ app = Flask(__name__)
 app.debug = True
 register_encoder(app)
 
+
+@app.route('/issues/api/v1.0/pedidos', methods=['PUT','POST'])
+@jsonapi
+def crear_pedido():
+    data = json.loads(request.data)
+    logging.debug(data)
+    return {'status':200, 'pedido': 3456}
+
 @app.route('/issues/api/v1.0/pedidos_ditesi', methods=['PUT','POST'])
 @jsonapi
 def crear_pedido_ditesi_privado():

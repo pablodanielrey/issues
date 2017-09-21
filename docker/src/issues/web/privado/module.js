@@ -42,6 +42,28 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     url:'/seleccion',
     templateUrl: 'componentes/pedidos/templates/seleccion.html',
   })
+  .state('pedidos.mantenimiento', {
+    url:'/mantenimiento',
+    templateUrl: 'componentes/pedidos/templates/mantenimiento.html',
+  })
+  .state('pedidos.administrativa', {
+    url:'/administrativa',
+    templateUrl: 'componentes/pedidos/templates/administrativa.html',
+  })
+  .state('pedidos.ditesi', {
+    url:'/ditesi',
+    templateUrl: 'componentes/pedidos/templates/ditesi.html',
+  })
+  .state('pedidos.ok', {
+    url:'/error',
+    templateUrl: 'componentes/pedidos/templates/pedido_registrado.html',
+  })
+  .state('pedidos.error', {
+    url:'/error',
+    templateUrl: 'componentes/pedidos/templates/error.html',
+  })
+
+
 
 
   // --- pedidos ----
