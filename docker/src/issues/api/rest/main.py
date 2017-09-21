@@ -20,9 +20,36 @@ register_encoder(app)
 @app.route('/issues/api/v1.0/pedidos', methods=['PUT','POST'])
 @jsonapi
 def crear_pedido():
+    ''' el pedido puede venir para varias oficinas, es determinado por request.data['estado_cliente'] '''
     data = json.loads(request.data)
     logging.debug(data)
-    return {'status':200, 'pedido': 3456}
+
+    uuid = data['usuario_id']
+    contacto = {
+        'telefono': data['telefono'],
+        'correo': data['correo']
+    }
+    problema = data['problema']
+
+    numero = None
+    estado = data['estado_cliente']
+    if 'ditesi' in estado:
+        numero = IssuesModel.crear_pedido_ditesi(uuid, contacto, problema)
+
+    if 'mantenimiento' in estado:
+        contacto['oficina'] = data['oficina']
+        contacto['horario'] = data['horario']
+        contacto['dias'] = ' '.join([d for d in data['dias'].keys() if data['dias'][d]])
+        numero = IssuesModel.crear_pedido_mantenimiento(uuid, contacto, problema)
+
+    if 'administrativa' in estado:
+        numero = IssuesModel.crear_pedido_administrativa(uuid, contacto, problema)
+
+    if numero:
+        return {'status':200, 'pedido': numero}
+    else:
+        raise Exception('estado_cliente not supported')
+
 
 @app.route('/issues/api/v1.0/pedidos_ditesi', methods=['PUT','POST'])
 @jsonapi
