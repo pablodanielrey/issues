@@ -1,0 +1,12 @@
+.pedidos {
+  height: 100%;
+}
+
+.pedidos .contendorPedidos {
+  height: 100%;
+}
+
+.pedidos hr {
+  width: 50%;
+  border: 1px solid #eee;
+}
