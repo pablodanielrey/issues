@@ -38,7 +38,6 @@ app.controller("PedidoDitesiCtrl", ["$scope", "$http", "$state", function ($scop
     var uuid = c.data['usuario']['sub'];
     $scope.obtenerInfoUsuario(uuid);
 
-    $state.go('pedidoDitesi.pedido');
   })
 
   $scope.registrarProblema = function() {

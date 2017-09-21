@@ -30,6 +30,20 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     templateUrl: 'componentes/preload/templates/error.html',
   })
 
+  //----- sistema de pedidos ----
+
+  $stateProvider
+  .state('pedidos', {
+    url:'/pedidos',
+    templateUrl: 'componentes/pedidos/index.html',
+    controller:'PedidosCtrl'
+  })
+  .state('pedidos.seleccion', {
+    url:'/seleccion',
+    templateUrl: 'componentes/pedidos/templates/seleccion.html',
+  })
+
+
   // --- pedidos ----
 
   $stateProvider
