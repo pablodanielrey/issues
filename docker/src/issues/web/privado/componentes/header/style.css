@@ -33,3 +33,9 @@
 .header .icoHeader {
   margin: 0 10px 0 18px;
 }
+
+.header .iconoSistemas {
+  color: #eee;
+  margin-left: 10px;
+  margin-right: 10px;
+}
