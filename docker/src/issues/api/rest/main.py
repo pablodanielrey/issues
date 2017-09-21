@@ -16,6 +16,22 @@ app = Flask(__name__)
 app.debug = True
 register_encoder(app)
 
+@app.route('/issues/api/v1.0/pedidos_ditesi', methods=['PUT','POST'])
+@jsonapi
+def crear_pedido_ditesi_privado():
+    data = json.loads(request.data)
+    logging.debug(data)
+    persona = {
+        'id': data['usuario_id'],
+        'telefono': data['telefono'],
+        'correo': data['correo']
+    }
+    problema = data['problema']
+    i = IssuesModel.crear_pedido_ditesi_privado(persona, problema)
+    return {'status':200, 'pedido': i}
+
+# --------- publico --------------
+
 @app.route('/issues/api/v1.0/publico/pedidos_ditesi', methods=['PUT','POST'])
 @jsonapi
 def crear_pedido_ditesi():
@@ -31,6 +47,14 @@ def crear_pedido_ditesi():
     problema = data['problema']
     i = IssuesModel.crear_pedido_ditesi_publico(persona, problema)
     return {'status':200, 'pedido': i}
+
+
+@app.route('/', methods=['OPTIONS'])
+def cors():
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+    return response
 
 @app.after_request
 def cors_after_request(response):

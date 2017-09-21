@@ -3,14 +3,10 @@ app.controller("PedidoDitesiCtrl", ["$scope", "$http", "$state", function ($scop
 
   //var Usuarios = $resource('http://127.0.0.1:5001/users/api/v1.0/usuarios/');
 
-  $scope.pedido = {
-      dni: '',
-      nombre: '',
-      apellido: '',
-      correo: ''
-  };
+  $scope.pedido = { };
 
   $scope.obtenerInfoUsuario = function(uid) {
+
     var api = $scope.config.users_api_url;
 
     $http.get(api + '/usuarios/' + uid).then(
@@ -22,7 +18,6 @@ app.controller("PedidoDitesiCtrl", ["$scope", "$http", "$state", function ($scop
             'nombre': usuario.nombre,
             'apellido': usuario.apellido
         }
-        $state.go('pedidoDitesi.pedido');
     },
     function(error){
         console.log(error);
@@ -35,9 +30,15 @@ app.controller("PedidoDitesiCtrl", ["$scope", "$http", "$state", function ($scop
     $scope.config = c.data;
     console.log(c.data);
 
-    var uuid = c.data['usuario']['sub'];
-    $scope.obtenerInfoUsuario(uuid);
+    var usuario = c.data['usuario']
+    $scope.pedido = {
+        usuario_id: usuario['sub'],
+        nombre: usuario['given_name'],
+        correo: usuario['email'],
+        telefono: usuario['phone_number']
+    }
 
+    $state.go('pedidoDitesi.pedido');
   })
 
   $scope.registrarProblema = function() {
@@ -54,7 +55,7 @@ app.controller("PedidoDitesiCtrl", ["$scope", "$http", "$state", function ($scop
     // };
 
     $http({
-            url: api + '/publico/pedidos_ditesi',
+            url: api + '/pedidos_ditesi',
             dataType: 'json',
             method: 'POST',
             data: $scope.pedido,

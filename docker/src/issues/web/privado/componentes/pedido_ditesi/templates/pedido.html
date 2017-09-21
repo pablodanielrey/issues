@@ -1,22 +1,13 @@
 <div class="pedido fdc fac ">
   <h1><i class="material-icons">near_me</i> Reportar problema</h1>
+
+  <div>Bienvenido {{pedido.nombre}}<div>
+
   <div class="subContenedor fdc fac">
     <p>Usa este formulario para darnos más detalles sobre el problema que estás experimentando y nos comunicaremos a la brevedad contigo.</p>
   </div>
 
   <form>
-    <div class="form-group fdr fac">
-      <div class="NombreInput">Dni</div>
-      <input type="text" class="inputFormulario form-control" ng-model="pedido.dni" required>
-    </div>
-    <div class="form-group fdr fac">
-      <div class="NombreInput">Nombre</div>
-      <input type="text" class="inputFormulario form-control" ng-model="pedido.nombre" required>
-    </div>
-    <div class="form-group fdr fac">
-      <div class="NombreInput">Apellido</div>
-      <input type="text" class="inputFormulario form-control" ng-model="pedido.apellido" required>
-    </div>
     <div class="form-group fdr fac">
       <div class="NombreInput">Correo</div>
       <input type="text" class="inputFormulario form-control" ng-model="pedido.correo" required>
