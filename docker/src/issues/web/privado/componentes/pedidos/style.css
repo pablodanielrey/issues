@@ -6,7 +6,87 @@
   height: 100%;
 }
 
+.pedidos .headerSistema {
+  width: 100%;
+  background-color: #eeeeee;
+  padding: 0 0 15px 0;
+  margin-bottom: 10px;
+}
+
 .pedidos hr {
   width: 50%;
   border: 1px solid #eee;
 }
+
+.pedidos .contendorAreas {
+  width: 35%;
+}
+
+.pedidos .btn1 {
+  width: 100%;
+border-radius: 4px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 42px;
+border: 2px solid #ECECEC;
+cursor: pointer;
+font-size: 14px;
+margin: 10px;
+color: #5c5f69;
+background-color: #eeeeee;
+border-bottom: 3px solid #0066A6;
+margin-top: 15px;
+}
+
+.pedidos .btn1:hover {
+background-color: #0066A6;
+}
+
+.pedidos .btn1:hover .iconoOficina,
+.pedidos .btn1:hover .contenedorNombreDeOficina,
+.pedidos .btn1:hover .nombreDeOficina {
+  color: white;
+}
+
+
+
+.pedidos .iconoOficina {
+  width: 100px;
+  border-right: 1px solid #c9c9c9;
+  padding: 10px 15px 10px 10px;
+}
+
+.pedidos .contenedorNombreDeOficina {
+  padding: 10px;
+  text-align: left;
+}
+
+.pedidos .nombreDeOficina {
+  color: #3f3f3f;
+  font-size: 16px;
+}
+
+.pedidos .subContenedor {
+  margin-bottom: 20px;
+}
+
+.pedidos .formulario {
+  width: 30%;
+}
+
+.pedidos .NombreInput {
+  background-color: #EFF0F1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  width: 150px;
+}
+
+.pedidos .inputFormulario {
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+
+@media screen and (max-width: 720px) {
+  .pedidos .contendorAreas {
+    width: 90%;
+  }

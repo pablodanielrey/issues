@@ -1,10 +1,34 @@
 <div class="contendorPedidos fdc fac">
-  <h1><i class="iconoSistemas fa fa-ticket" aria-hidden="true"></i> Sistema de Pedidos FCE</h1><hr>
-  <div><h4>¡Hola! <b>Pablo Daniel</b>,<br> Secciona el áera al cual deseas realizar el pedido</h4></div>
 
+  <div class="fdc fac">
+    <h4>¡Hola! <b>{{pedido.usuario}}Pablo Daniel</b>,</h4>
+    <p>Selecciona el áera al cual deseas realizar el pedido</p><hr>
+  </div>
 
+  <div class="contendorAreas">
 
-  <div>pedido a <a ui-sref='pedidos.mantenimiento'>Mantenimiento</a></div>
-  <div>pedido a secretaria administrativa: <a ui-sref='pedidos.administrativa'>Secretaría Administrativa</a></div>
-  <div>pedido a <a ui-sref='pedidos.ditesi'>DiTeSI (informática)</a></div>
+      <button class="btn1 fdr" <a ui-sref='pedidos.ditesi'></a>
+        <div class="iconoOficina"><i class="fa fa-desktop fa-4x" aria-hidden="true"></i></div>
+        <div class="fdc contenedorNombreDeOficina">
+            <div class="nombreDeOficina"><b>DiTeSI (Informática)</b></div>
+            <div>Dirección de tecnologías y Sistemas Informáticos</div>
+        </div>
+      </button>
+      <button class="btn1 fdr" <a ui-sref='pedidos.mantenimiento'></a>
+        <div class="iconoOficina"><i class="fa fa-lightbulb-o fa-4x" aria-hidden="true"></i></div>
+        <div class="fdc contenedorNombreDeOficina">
+            <div class="nombreDeOficina"><b>Mantenimiento y Servicios Generales</b></div>
+            <div>Dirección de Mantenimiento y Servicios Generales</div>
+        </div>
+      </button>
+      <button class="btn1 fdr" <a ui-sref='pedidos.administrativa'></a>
+        <div class="iconoOficina"><i class="fa fa-sitemap fa-4x" aria-hidden="true"></i></div>
+        <div class="fdc contenedorNombreDeOficina">
+            <div class="nombreDeOficina"><b>Secretaría Administrativa</b></div>
+            <div></div>
+        </div>
+      </button>
+
+  </div>
+
 </div>
