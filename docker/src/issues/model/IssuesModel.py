@@ -63,7 +63,7 @@ class IssuesModel:
     def _crear_pedido_a_oficina(cls, uid, contacto, pedido, template, GUID):
         usuario = UsersAPI.obtenerInfoUsuario(uid)
 
-        sub = '{} - {} - {} - {} - {}...'.format(usuario['dni'], usuario['nombre'], usuario['apellido'], contacto['correo'], pedido[:20])
+        sub = '{}, {} - {}...'.format(usuario['nombre'], usuario['apellido'], pedido[:60])
         cuerpo = cls._formatear(usuario, contacto, pedido, template)
 
         cls.crear_usuario_redmine_si_no_existe(usuario)

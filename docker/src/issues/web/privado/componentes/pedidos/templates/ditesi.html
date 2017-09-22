@@ -10,14 +10,19 @@
         <input type="text" class="inputFormulario form-control" ng-model="pedido.correo" required>
       </div>
       <div class="form-group fdr fac">
-        <div class="NombreInput">Teléfono</div>
+        <div class="NombreInput">Teléfono o Interno</div>
         <input type="mail" class="inputFormulario form-control" ng-model="pedido.telefono">
+      </div>
+      <div class="form-group fdr fac">
+        <div class="NombreInput">Nº Oficina</div>
+        <input type="text" class="inputFormulario form-control" ng-model="pedido.oficina">
       </div>
       <div class="form-group">
       <div>Describe el Pedido</div>
       <textarea class="form-control" rows="5" ng-model="pedido.problema" required></textarea>
       </div>
       <md-button class="md-raised md-primary" ng-click='registrarProblema()'>Enviar Consulta</md-button>
+      <md-button md-no-ink class="md-primary" ng-click='seleccionar()'>Volver</md-button>
     </form>
   </div>
 

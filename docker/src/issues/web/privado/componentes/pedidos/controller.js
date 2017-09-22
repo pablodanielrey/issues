@@ -3,9 +3,12 @@ app.controller("PedidosCtrl", ["$scope", "$resource", "$location", '$state', '$h
 
   //var Usuarios = $resource('http://127.0.0.1:5001/users/api/v1.0/usuarios/');
 
-  $state.go('pedidos.seleccion');
 
   $scope.pedido = { };
+
+  $scope.seleccionar = function() {
+    $state.go('pedidos.seleccion');
+  }
 
   $scope.$parent.obtener_config().then(function(c) {
     $scope.config = c.data;
@@ -18,6 +21,8 @@ app.controller("PedidosCtrl", ["$scope", "$resource", "$location", '$state', '$h
         correo: usuario['email'],
         telefono: usuario['phone_number']
     }
+
+    $state.go('pedidos.seleccion');
   })
 
   $scope.registrarProblema = function() {
