@@ -38,7 +38,8 @@ app.config['OIDC_COOKIE_SECURE'] = False
 app.config['OIDC_VALID_ISSUERS'] = [os.environ['LOGIN_OIDC_ISSUER']]
 app.config['OIDC_RESOURCE_CHECK_AUD'] = False
 app.config['OIDC_INTROSPECTION_AUTH_METHOD'] = 'client_secret_post'
-app.config['OIDC_ID_TOKEN_COOKIE_NAME'] = 'issues_oidc'
+app.config['OIDC_ID_TOKEN_COOKIE_NAME'] = 'id_oidc'
+app.config['OIDC_ID_TOKEN_COOKIE_DOMAIN'] = '.econo.unlp.edu.ar'
 app.config['OIDC_USER_INFO_ENABLED'] = True
 app.config['OIDC_SCOPES'] = ['openid','email','phone','profile','address','econo']
 
