@@ -38,7 +38,9 @@ setup(name='issues',
                             'httplib2',
                             'pyjwt',
                             'itsdangerous',
-                            'python-redmine'],
+                            'python-redmine',
+                            'microservices_common'],
+          dependency_links=['http://pypi.econo.unlp.edu.ar:8080/packages'],
           entry_points={
             'console_scripts': [
                 'wamp=issues.api.wamp.main:main',
