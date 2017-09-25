@@ -135,29 +135,29 @@ class MyOpenIDConnect(OpenIDConnect):
         # insecure cookies.
         # We don't define OIDC_ID_TOKEN_COOKIE_SECURE in init_app, because we
         # don't want people to find it easily.
-        cookie_secure = (current_app.config['OIDC_COOKIE_SECURE'] and
-                         current_app.config.get('OIDC_ID_TOKEN_COOKIE_SECURE',
+        cookie_secure = (self.current_app.config['OIDC_COOKIE_SECURE'] and
+                         self.current_app.config.get('OIDC_ID_TOKEN_COOKIE_SECURE',
                                                 True))
 
         if getattr(g, 'oidc_id_token_dirty', False):
             if g.oidc_id_token:
                 signed_id_token = self.cookie_serializer.dumps(g.oidc_id_token)
                 response.set_cookie(
-                    current_app.config['OIDC_ID_TOKEN_COOKIE_NAME'],
+                    self.current_app.config['OIDC_ID_TOKEN_COOKIE_NAME'],
                     signed_id_token,
                     secure=cookie_secure,
                     httponly=True,
-                    max_age=current_app.config['OIDC_ID_TOKEN_COOKIE_TTL'],
-                    domain=current_app.config['OIDC_ID_TOKEN_COOKIE_DOMAIN'])
+                    max_age=self.current_app.config['OIDC_ID_TOKEN_COOKIE_TTL'],
+                    domain=self.current_app.config['OIDC_ID_TOKEN_COOKIE_DOMAIN'])
             else:
                 # This was a log out
                 response.set_cookie(
-                    current_app.config['OIDC_ID_TOKEN_COOKIE_NAME'],
+                    self.current_app.config['OIDC_ID_TOKEN_COOKIE_NAME'],
                     '',
                     secure=cookie_secure,
                     httponly=True,
                     expires=0,
-                    domain=current_app.config['OIDC_ID_TOKEN_COOKIE_DOMAIN'])
+                    domain=self.current_app.config['OIDC_ID_TOKEN_COOKIE_DOMAIN'])
         return response
 
 import json
