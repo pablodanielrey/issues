@@ -1,4 +1,3 @@
-#FROM crossbario/autobahn-python:cpy3
 FROM python:3.6.2-stretch
 
 RUN apt-get update && apt-get install -y \
@@ -17,6 +16,7 @@ COPY supervisor/srest.conf /etc/supervisor/conf.d
 COPY supervisor/sflask.conf /etc/supervisor/conf.d
 #COPY supervisor/swamp.conf /etc/supervisor/conf.d
 COPY .pypirc /root/
+COPY pip.conf /etc/
 
 WORKDIR /src
 #RUN pip3 install -e .

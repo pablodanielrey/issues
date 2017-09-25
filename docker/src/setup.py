@@ -40,7 +40,7 @@ setup(name='issues',
                             'itsdangerous',
                             'python-redmine',
                             'microservices_common'],
-          dependency_links=['http://pypi.econo.unlp.edu.ar:8080/packages'],
+          #dependency_links=['http://pypi.econo.unlp.edu.ar:8080/packages'],
           entry_points={
             'console_scripts': [
                 'wamp=issues.api.wamp.main:main',
