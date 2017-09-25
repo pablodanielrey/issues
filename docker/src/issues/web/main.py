@@ -20,7 +20,7 @@ with open('/tmp/client_secrets.json','w') as f:
     }}, f)
 
 
-
+import redis
 import flask
 from flask import Flask, request, send_from_directory, jsonify, redirect, url_for
 from flask_jsontools import jsonapi
@@ -42,7 +42,9 @@ app.config['OIDC_ID_TOKEN_COOKIE_NAME'] = 'issues_oidc'
 app.config['OIDC_USER_INFO_ENABLED'] = True
 app.config['OIDC_SCOPES'] = ['openid','email','phone','profile','address','econo']
 
-oidc = MyOpenIDConnect(app, credentials_store=DictWrapper('credentials_store'))
+REDIS_HOST = os.environ['REDIS_HOST']
+r = redis.StrictRedis(host=REDIS_HOST, port=6379, db=0)
+oidc = MyOpenIDConnect(app, credentials_store=RedisWrapper(r))
 
 @app.route('/config.json', methods=['GET'])
 @jsonapi

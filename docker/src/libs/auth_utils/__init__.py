@@ -128,6 +128,40 @@ class MyOpenIDConnect(OpenIDConnect):
         return True
 
 
+import json
+
+class RedisWrapper(object):
+
+    def __init__(self, r=None):
+        if r:
+            self.r = r
+        else:
+            import redis
+            self.r = redis.StrictRedis(host='localhost', port=6379, db=0)
+
+    def __setitem__(self, key, value):
+        print(key)
+        return self.r.set(key, json.dumps(value))
+
+    def __getitem__(self, key):
+        v = self.r.get(key)
+        if not v:
+            return None
+        return json.loads(v)
+
+    def __delitem__(self, key):
+        return self.r.delete(key)
+
+    def __contains__(self, key):
+        return self.__getitem__(key) is not None
+
+    def items(self):
+        return [ (i, json.loads(self.r.get(i))) for i in self.r.scan_iter() ]
+
+    def pop(self, key, default=None):
+        raise Exception()
+
+
 class DictWrapper(object):
     def __init__(self, name, d=None):
         self.name = name
