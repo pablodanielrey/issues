@@ -1,5 +1,7 @@
 import logging
 from flask_oidc import OpenIDConnect
+from flask import g
+
 
 logger = logging.getLogger(__name__)
 
@@ -28,8 +30,6 @@ class MyOpenIDConnect(OpenIDConnect):
 
         .. versionadded:: 1.0
         """
-        from flask import g
-
 
         if g.oidc_id_token is None and access_token is None:
             raise Exception('User was not authenticated')
