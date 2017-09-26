@@ -55,7 +55,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     templateUrl: 'componentes/pedidos/templates/ditesi.html',
   })
   .state('pedidos.ok', {
-    url:'/error',
+    url:'/pedido_ok',
     templateUrl: 'componentes/pedidos/templates/pedido_registrado.html',
   })
   .state('pedidos.error', {

@@ -1,3 +1,8 @@
+
+* {
+  box-sizing: border-box;
+}
+
 .pedidos {
   height: 100%;
 }
@@ -69,6 +74,10 @@ background-color: #0066A6;
   margin-bottom: 20px;
 }
 
+.pedidos .parrafoPrincipal {
+  text-align: center;
+}
+
 .pedidos .formulario {
   width: 30%;
 }
@@ -78,7 +87,7 @@ background-color: #0066A6;
   padding: 6px;
   border: 1px solid #ccc;
   border-radius: 4px 0 0 4px;
-  width: 150px;
+  width: 220px;
 }
 
 .pedidos .inputFormulario {
@@ -86,7 +95,27 @@ background-color: #0066A6;
   border-radius: 0 4px 4px 0;
 }
 
+.pedidos .seleccionDeDias {
+      margin-bottom: 0px;
+}
+
+.pedidos .numeroDePedido {
+  background: #eee;
+  font-size: 50px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #007AC2;
+  margin-bottom: 5px;
+}
+
 @media screen and (max-width: 720px) {
   .pedidos .contendorAreas {
     width: 90%;
   }
+  .pedidos .formulario {
+    width: 90%;
+  }
+  .pedidos .parrafoPrincipal {
+    padding: 0 20px 0 20px;
+  }
+}

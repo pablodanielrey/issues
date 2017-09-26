@@ -1,27 +1,25 @@
-<div>Registro de Pedidos de La Dirección de Mantenimiento, Producción y Servicios Generales </div>
-<div>Bienvenido {{pedido.nombre}}<div>
-<div class="subContenedor fdc fac">
-  <p>Usa este formulario para darnos más detalles sobre el requerimiento y nos comunicaremos a la brevedad contigo.</p>
+<div class="fdc fac">
+  <h4>Pedido para <b>Dirección de Mantenimiento, Producción y Servicios Generales</b></h4>
+  <p class="parrafoPrincipal">Usa este formulario para darnos más detalles sobre el problema que estás experimentando y nos comunicaremos a la brevedad contigo.</p><hr>
 </div>
+
+<div class="subContenedor fdc fac">
+  <div class="formulario frc fjc">
 
 <form>
   <div class="form-group fdr fac">
-    <div class="NombreInput">Correo de Contacto</div>
+    <div class="NombreInput">Correo</div>
     <input type="text" class="inputFormulario form-control" ng-model="pedido.correo" required>
   </div>
 
   <div class="form-group fdr fac">
-    <div class="NombreInput">Teléfono de Contacto</div>
+    <div class="NombreInput">Teléfono</div>
     <input type="mail" class="inputFormulario form-control" ng-model="pedido.telefono">
   </div>
 
   <div class="form-group fdr fac">
-    <div class="NombreInput">Días de Contacto</div>
-    Lunes<md-switch ng-model="pedido.dias.lunes" class="md-warn">{{pedido.dias.lunes}}</md-switch>
-    Martes<md-switch ng-model="pedido.dias.martes" class="md-warn">{{pedido.dias.martes}}</md-switch>
-    Miércoles<md-switch ng-model="pedido.dias.miercoles" class="md-warn">{{pedido.dias.miercoles}}</md-switch>
-    Jueves<md-switch ng-model="pedido.dias.jueves" class="md-warn">{{pedido.dias.jueves}}</md-switch>
-    Viernes<md-switch ng-model="pedido.dias.viernes" class="md-warn">{{pedido.dias.viernes}}</md-switch>
+    <div class="NombreInput">Nº de Oficina</div>
+    <input type="text" class="inputFormulario form-control" ng-model="pedido.oficina" required>
   </div>
 
   <div class="form-group fdr fac">
@@ -29,10 +27,17 @@
     <input type="text" class="inputFormulario form-control" ng-model="pedido.horario" required>
   </div>
 
-  <div class="form-group fdr fac">
-    <div class="NombreInput">Número de Oficina</div>
-    <input type="text" class="inputFormulario form-control" ng-model="pedido.oficina" required>
+  <div class="">Días de Contacto</div>
+  <div class="form-group seleccionDeDias  fdr fac ">
+    L &nbsp; <md-switch ng-model="pedido.dias.lunes" class="md-warn"> </md-switch>
+    M &nbsp; <md-switch ng-model="pedido.dias.martes" class="md-warn"> </md-switch>
+    M &nbsp; <md-switch ng-model="pedido.dias.miercoles" class="md-warn"> </md-switch>
+    J &nbsp; <md-switch ng-model="pedido.dias.jueves" class="md-warn"> </md-switch>
+    V &nbsp; <md-switch ng-model="pedido.dias.viernes" class="md-warn"> </md-switch>
   </div>
+
+
+
 
 
   <div class="form-group">
@@ -45,3 +50,5 @@
   <md-button md-no-ink class="md-primary" ng-click='seleccionar()'>Volver</md-button>
 
 </form>
+</div>
+</div>
