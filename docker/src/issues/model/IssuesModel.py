@@ -33,7 +33,7 @@ class IssuesModel:
             cls.TEMPLATES = os.path.dirname(inspect.getfile(cls)) + '/templates'
         env = Environment(loader=FileSystemLoader(cls.TEMPLATES), trim_blocks=False)
         templ = env.get_template(template)
-        return templ.render(persona=persona, contacto=contacto, pedido=pedido)
+        return templ.render(persona=persona, contacto=contacto, problema=pedido)
 
     @classmethod
     def crear_usuario_redmine(r, usuario):
