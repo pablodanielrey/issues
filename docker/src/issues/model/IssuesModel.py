@@ -116,7 +116,7 @@ class IssuesModel:
 
         cls.crear_usuario_redmine_si_no_existe(usuario)
         r = Redmine(cls.URL, key = cls.KEY, version='3.3', impersonate=usuario['dni'], requests={'verify': False})
-        pedidos = r.project.get(cls.GUID)
+        pedidos = r.project.get(cls.GUID_PEDIDO_DITESI)
 
         issue = r.issue.new()
         issue.project_id = pedidos.id
@@ -144,7 +144,7 @@ class IssuesModel:
 
 
         r = Redmine(cls.URL, key = cls.KEY, version='3.3', requests={'verify': False})
-        pedidos = r.project.get(cls.GUID)
+        pedidos = r.project.get(cls.GUID_PEDIDO_DITESI)
 
         issue = r.issue.new()
         issue.project_id = pedidos.id
