@@ -11,7 +11,7 @@ app.config(function($mdThemingProvider) {
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/pedido_ditesi");
+  $urlRouterProvider.otherwise("/pedidos");
 
   // --- preload ----
 
