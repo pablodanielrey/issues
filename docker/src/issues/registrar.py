@@ -4,7 +4,7 @@ if __name__ == '__main__':
     import os
     import sys
 
-    dominio = os.environ['USERS_URL'].replace('http://','').replace('https://','')
+    dominio = os.environ['ISSUES_URL'].replace('http://','').replace('https://','')
     nombre = sys.argv[1]
     path = sys.argv[2]
     server = sys.argv[3]
